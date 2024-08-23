@@ -1,32 +1,36 @@
-# toDoList-backend
-Backend proyecto To Do List
+# Proyecto Todo List - Backend
+
+## Descripción
 
 Este es el backend para la aplicación de gestión de tareas (Todo List) utilizando Node.js, Express y MongoDB.
 
 ## Requisitos Previos
 
 - Node.js (versión recomendada: 16.x o superior)
+- Un editor de código (opcional, pero recomendado: VSCode)
 
 ## Clonación del Repositorio
 
-- Clona el repositorio en tu máquina local:
+1. Clona el repositorio en tu máquina local:
 
-   **En tu terminal ejecuta el siguiente comando:
+  ```bash
    git clone https://github.com/AngelAlfGar/toDoList-backend.git
 
-- Navega hasta el repositorio clonado
+2. Navega hasta el repositorio clonado:
 
-  **En tu terminal ejecuta el siguiente comando:
+  ```bash
   cd toDoList-backend
 
 ## Instalación dependencias
 
-  **En tu terminal ejecuta el siguiente comando:
+1. Ya en tu repositorio clonado:
+  
+  ```bash
   npm install
 
 ## Configuración del entorno
 
-  En la carpeta raíz del proyecto crea un archivo llamado '.env' y agrega las siguientes variables de entorno
+  En la carpeta raíz del proyecto crea un archivo llamado '.env' y agrega las siguientes variables de entorno (puedes usar VSCode)
 
   MONGO_URI=mongodb+srv://luigyalfaro64:rOrTXRHZL8mhX0eS@cluster0.8xblg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
   
@@ -35,6 +39,5 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 ## Ejecución del servidor
 
   **En tu terminal ejecuta el siguiente comando:
-  npm start 
-  o 
-  nodemon server
+  ```bash
+  npm start
