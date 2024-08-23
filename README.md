@@ -26,7 +26,7 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 1. Ya en tu repositorio clonado:
   
   ``bash
-  npm install``
+  npm install
 
 ## Configuración del entorno
 
