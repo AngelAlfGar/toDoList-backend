@@ -13,20 +13,20 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 
 1. Clona el repositorio en tu máquina local:
 
-  ```bash
+  ``bash
    git clone https://github.com/AngelAlfGar/toDoList-backend.git
 
 2. Navega hasta el repositorio clonado:
 
-  ```bash
+  ``bash
   cd toDoList-backend
 
 ## Instalación dependencias
 
 1. Ya en tu repositorio clonado:
   
-  ```bash
-  npm install
+  ``bash
+  npm install``
 
 ## Configuración del entorno
 
