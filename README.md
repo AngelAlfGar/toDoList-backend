@@ -41,9 +41,4 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 
   **En tu terminal ejecuta el siguiente comando:
   ```bash
-  npm start 
-
-  o
-
-  ```bash
-  nodemon server
+  npm start
