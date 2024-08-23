@@ -6,6 +6,7 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 ## Requisitos Previos
 
 - Node.js (versión recomendada: 16.x o superior)
+- Un editor de código (opcional, pero recomendado: VSCode)
 
 ## Clonación del Repositorio
 
@@ -28,7 +29,7 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 
 ## Configuración del entorno
 
-  En la carpeta raíz del proyecto crea un archivo llamado '.env' y agrega las siguientes variables de entorno
+  En la carpeta raíz del proyecto crea un archivo llamado '.env' y agrega las siguientes variables de entorno (puedes usar VSCode)
 
   MONGO_URI=mongodb+srv://luigyalfaro64:rOrTXRHZL8mhX0eS@cluster0.8xblg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
   
