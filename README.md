@@ -21,7 +21,9 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 
 ## Instalación dependencias
 
-  **En tu terminal ejecuta el siguiente comando:
+- Ya en tu repositorio clonado
+- 
+  **Ejecuta el siguiente comando:
   npm install
 
 ## Configuración del entorno
