@@ -9,7 +9,7 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 
 ## Clonación del Repositorio
 
-- Clona el repositorio en tu máquina local
+1. Clona el repositorio en tu máquina local
 
    **En tu terminal ejecuta el siguiente comando:
   ```bash
