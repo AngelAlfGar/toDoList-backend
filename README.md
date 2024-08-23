@@ -1,5 +1,4 @@
-# toDoList-backend
-Backend proyecto To Do List
+# Proyecto Todo List - Backend
 
 Este es el backend para la aplicación de gestión de tareas (Todo List) utilizando Node.js, Express y MongoDB.
 
