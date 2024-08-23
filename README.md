@@ -38,7 +38,7 @@ Este es el backend para la aplicación de gestión de tareas (Todo List) utiliza
 
 ## Ejecución del servidor
 
-  **En tu terminal ejecuta el siguiente comando:
+  - En tu terminal ejecuta el siguiente comando:
   ```bash
   npm start
   ```
