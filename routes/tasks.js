@@ -73,7 +73,7 @@ router.delete('/:id', authMiddleware, async (req, res) => {
   }
 });
 
-// Alternar el estado completado de una tarea
+// Cambiar el estado completado de una tarea
 router.patch('/:id/completed', authMiddleware, async (req, res) => {
   try {
     let task = await Task.findById(req.params.id);
@@ -83,7 +83,6 @@ router.patch('/:id/completed', authMiddleware, async (req, res) => {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
-    // Alternar el valor de completed
     task.completed = !task.completed;
     await task.save();
 
