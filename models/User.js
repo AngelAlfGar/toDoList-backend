@@ -21,7 +21,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-// Encriptar la contraseña antes de guardar el usuario
 UserSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     next();
