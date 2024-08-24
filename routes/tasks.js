@@ -1,10 +1,10 @@
 const express = require('express');
 const authMiddleware = require('../middleware/authMiddleware');
 const Task = require('../models/Task');
-const Subtask = require('../models/Subtask');
 
 const router = express.Router();
 
+// Obtener tareas
 router.get('/', authMiddleware, async (req, res) => {
   try {
     const tasks = await Task.find({ user: req.user.id });
@@ -64,73 +64,33 @@ router.delete('/:id', authMiddleware, async (req, res) => {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
-    await Task.findByIdAndRemove(req.params.id);
+    await Task.findByIdAndDelete(req.params.id);
+
     res.json({ msg: 'Task removed' });
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
+    console.error("Error en el servidor al intentar eliminar la tarea:", err.message);
+    res.status(500).send('Server error: ' + err.message);
   }
 });
 
-// Obtener todas las subtareas de una tarea específica
-router.get('/:taskId', authMiddleware, async (req, res) => {
+// Alternar el estado completado de una tarea
+router.patch('/:id/completed', authMiddleware, async (req, res) => {
   try {
-    const subtasks = await Subtask.find({ task: req.params.taskId });
-    res.json(subtasks);
+    let task = await Task.findById(req.params.id);
+    if (!task) return res.status(404).json({ msg: 'Task not found' });
+
+    if (task.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: 'User not authorized' });
+    }
+
+    // Alternar el valor de completed
+    task.completed = !task.completed;
+    await task.save();
+
+    res.json(task);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-});
-
-// Crear una nueva subtarea
-router.post('/', authMiddleware, async (req, res) => {
-  const { title, task } = req.body;
-
-  try {
-    const existingTask = await Task.findById(task);
-    if (!existingTask) return res.status(404).json({ msg: 'Task not found' });
-
-    const newSubtask = new Subtask({
-      title,
-      task,
-    });
-
-    const subtask = await newSubtask.save();
-    res.json(subtask);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-});
-
-// Actualizar una subtarea
-router.put('/:id', authMiddleware, async (req, res) => {
-  const { title, status } = req.body;
-
-  try {
-    let subtask = await Subtask.findById(req.params.id);
-    if (!subtask) return res.status(404).json({ msg: 'Subtask not found' });
-
-    subtask = await Subtask.findByIdAndUpdate(req.params.id, { $set: { title, status } }, { new: true });
-    res.json(subtask);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-});
-
-// Eliminar una subtarea
-router.delete('/:id', authMiddleware, async (req, res) => {
-  try {
-    let subtask = await Subtask.findById(req.params.id);
-    if (!subtask) return res.status(404).json({ msg: 'Subtask not found' });
-
-    await Subtask.findByIdAndRemove(req.params.id);
-    res.json({ msg: 'Subtask removed' });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
+    console.error("Error en el servidor al intentar alternar el estado de completado:", err.message);
+    res.status(500).send('Server error: ' + err.message);
   }
 });
 
